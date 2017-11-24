@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="zh-cn">
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <title>亲子有姿势</title>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="https://res.wx.qq.com/mmbizwap/zh_CN/htmledition/js/vconsole/3.0.0/vconsole.min.js"></script>
+    <script>
+        !function (a, b) {
+            function c() {
+                var b = f.getBoundingClientRect().width;
+                b / i > 540 && (b = 540 * i);
+                var c = b / 10;
+                f.style.fontSize = c + "px", k.rem = a.rem = c
+            }
+
+            var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'),
+                h = e.querySelector('meta[name="flexible"]'), i = 0, j = 0, k = b.flexible || (b.flexible = {});
+            if (g) {
+                console.warn("将根据已有的meta标签来设置缩放比例");
+                var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);
+                l && (j = parseFloat(l[1]), i = parseInt(1 / j))
+            } else if (h) {
+                var m = h.getAttribute("content");
+                if (m) {
+                    var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/);
+                    n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2)))
+                }
+            }
+            if (!i && !j) {
+                var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)),
+                    q = a.devicePixelRatio;
+                i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i
+            }
+            if (f.setAttribute("data-dpr", i), !g) if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g); else {
+                var r = e.createElement("div");
+                r.appendChild(g), e.write(r.innerHTML)
+            }
+            a.addEventListener("resize", function () {
+                clearTimeout(d), d = setTimeout(c, 300)
+            }, !1), a.addEventListener("pageshow", function (a) {
+                a.persisted && (clearTimeout(d), d = setTimeout(c, 300))
+            }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () {
+                e.body.style.fontSize = 12 * i + "px"
+            }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) {
+                var b = parseFloat(a) * this.rem;
+                return "string" == typeof a && a.match(/rem$/) && (b += "px"), b
+            }, k.px2rem = function (a) {
+                var b = parseFloat(a) / this.rem;
+                return "string" == typeof a && a.match(/px$/) && (b += "rem"), b
+            }
+        }(window, window.lib || (window.lib = {}));
+    </script>
+    <%= htmlWebpackPlugin.options.url %>
+    <script>
+        //                       var user_info_str = `{$userInfo}`
+        //                       var from_user_id = `{$fromUserId}`
+        //                       var is_debug = `{$isDebug}`;
+        //                       if (is_debug == 1){
+        //                           var vConsole = new VConsole();
+        //                       }
+        var user_info_str = `{"openid":"oDUoWxKpqXUEdLqnkcbHOwlToBhw","nickname":"\u5218\u54f2","sex":1,"language":"zh_CN","city":"Xi\'an","province":"Shaanxi","country":"CN","headimgurl":"http:\\/\\/wx.qlogo.cn\\/mmhead\\/ORCZjd6UIicKLwC32EXWg8o5K1xe7AjumJADicV1X0Xtg\\/0","privilege":[],"unionid":"oTCMPsx1-KFVhYAQkC3752E6ndD4"}`;
+
+        //                          wx.config({
+        //                            debug: false,
+        //                            appId: '<?php echo $signPackage["appId"];?>',
+        //                            timestamp: <?php echo $signPackage["timestamp"];?>,
+        //                            nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+        //                            signature: '<?php echo $signPackage["signature"];?>',
+        //                            jsApiList: [
+        //                              'onMenuShareTimeline',
+        //                              'onMenuShareAppMessage',
+        //                            ]
+        //                        });
+
+        function setShareTimeline(product_link, share_title, share_image_url) {
+//                    wx.onMenuShareTimeline({
+//                      title: share_title, // 分享标题
+//                      link: product_link, // 分享链接
+//                      imgUrl: share_image_url, // 分享图标
+//                      success: function () {
+//                        console.log('share ok');
+//                      }
+//                    });
+        }
+
+        function setShareAppMessage(product_link, share_title, share_description, share_image_url) {
+//                    wx.onMenuShareAppMessage({
+//                      desc: share_description, // 分享描述
+//                      title: share_title, // 分享标题
+//                      link: product_link, // 分享链接
+//                      imgUrl: share_image_url, // 分享图标
+//                      type: 'link', // 分享类型,music、video或link，不填默认为link
+//                      dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+//                      success: function () {
+//                        console.log('share app message ok');
+//                      }
+//                    });
+        }
+
+        function setShareInfo(product_link, share_title, share_description, share_image_url) {
+//                   wx.ready(function () {
+//                       console.log('share url set->' + product_link);
+//                       setShareAppMessage(product_link, share_title, share_description, share_image_url);
+//                       setShareTimeline(product_link, share_title, share_image_url);
+//                   });
+        }
+    </script>
+</head>
+
+<body>
+<div class="spinner-wrap" id="spinner-wrap">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>
+<div id="app">
+</div>
+</body>
+<script>
+    document.body.addEventListener('touchstart', function () {
+    });
+</script>
+
+</html>
